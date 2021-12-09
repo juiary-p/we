@@ -1,0 +1,44 @@
+# server config
+#incloude-exception : 오류 응답에 exception 내용 포함 여부
+#incloude-stacktrace : 오류 응답에 stacktrace 내용 포함 여부
+server:
+  port: 8086
+  error:
+    include-exception: true
+    include-stacktrace: always
+    whitelabel:
+      enabled: false
+
+# thymeleaf config
+thymeleaf:
+  prefix: classpath:templates/
+  check-template-location: true
+  suffix: .html
+  mode: HTML5
+  cache: false
+  order: 0
+
+# 정적 페이지 바로 적용
+devtools:
+  livereload:
+    enabled: true
+
+# log config
+logging:
+  file:
+    path: C:/We_logs/
+
+# mybatis config
+mybatis:
+  type-aliases-package: com.juhee.we;
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+# database config
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306;databaseName=jh_proj
+    username: root
+    password: wngml1860
