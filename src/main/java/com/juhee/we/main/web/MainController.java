@@ -11,6 +11,6 @@ public class MainController {
 
     @RequestMapping("")
     public String main() throws Exception {
-        return "main/main";
+        return "user/main";
     }
 }

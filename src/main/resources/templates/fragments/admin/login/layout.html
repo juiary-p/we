@@ -1,4 +1,4 @@
-<!-- admin layout -->
+<!-- admin login layout -->
 <!DOCTYPE html>
 
 <html lang="ko"
@@ -10,11 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <th:block th:replace="fragments/comImportFiles::importFragment"></th:block>
-    <th:block th:replace="fragments/admin/importFiles::importFragment"></th:block>
 </head>
 
-<header th:replace="fragments/admin/header::headerFragment"></header>
+<!--<header th:replace="fragments/admin/login/header::headerFragment"></header>-->
 <body layout:fragment="content"></body>
-<footer th:replace="fragments/admin/footer::footerFragment"></footer>
+<!--<footer th:replace="fragments/admin/login/footer::footerFragment"></footer>-->
 
 </html>

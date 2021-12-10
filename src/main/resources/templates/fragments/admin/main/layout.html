@@ -1,0 +1,23 @@
+<!-- admin layout -->
+<!DOCTYPE html>
+
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <th:block th:replace="fragments/comImportFiles::importFragment"></th:block>
+        <th:block th:replace="fragments/admin/main/importFiles::importFragment"></th:block>
+    </head>
+
+    <header th:replace="fragments/admin/main/header::headerFragment"></header>
+    <body>
+        <div class="admin-main-left left">left area</div>
+        <div class="admin-main-right">
+            <div layout:fragment="content"></div>
+        </div>
+    </body>
+    <footer th:replace="fragments/admin/main/footer::footerFragment"></footer>
+</html>

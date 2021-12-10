@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="fragments/admin/login/layout">
+<head>
+    <!-- favicon.ico 404 error 막기 (임시방편) -->
+    <link rel="shortcut icon" href="#">
+    <title th:text="admin"></title>
+
+    <script>
+        function goJoinPage(){
+            window.location.href = "/user/goJoinPage";
+        }
+
+        function adminLogin(){
+            // create form
+            let form = document.createElement("form");
+            form.setAttribute("charset", "UTF-8");
+            form.setAttribute("method", "Post");
+            form.setAttribute("action", "/admin/login");
+
+            // set form
+            addElement(form, "userId", document.getElementById("userId").value);
+            addElement(form, "userPwd", document.getElementById("userPwd").value);
+
+            // submit
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</head>
+
+<body layout:fragment="content">
+    <div class="container-login">
+        <div class="login-box">
+            <div class="login-box-header">
+                <h2>LOGIN</h2>
+            </div>
+            <div class="login-box-form">
+                <label for="userId"></label>
+                <input type="text" id="userId" name="userId" placeholder="ID">
+
+                <label for="userPwd"></label>
+                <input type="password" id="userPwd" name="userPwd" placeholder="password">
+
+                <p class="btn-area">
+                    <a href="javascript:;" class="btn login" onclick="adminLogin();">login</a>
+                </p>
+                <p class="join-btn-area">
+                    <a href="javascript:;" class="btn" onclick="goJoinPage();">join</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
